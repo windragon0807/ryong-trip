@@ -42,6 +42,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:18.2.60"],\
           ["@types/react-dom", "npm:18.2.19"],\
           ["craco-alias", "npm:3.0.1"],\
+          ["date-fns", "npm:2.30.0"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-prettier", "virtual:8e181d7e2b5c31f85a4f18e8839e02d5ee0b5823c28e5a3f49c6f52335c530c6649b6b7a12862ed97e48291bcc1ed38f1ff0efb361b55aad4df70e0d1917f8bb#npm:9.1.0"],\
           ["eslint-config-react-app", "virtual:8e181d7e2b5c31f85a4f18e8839e02d5ee0b5823c28e5a3f49c6f52335c530c6649b6b7a12862ed97e48291bcc1ed38f1ff0efb361b55aad4df70e0d1917f8bb#npm:7.0.1"],\
@@ -3182,6 +3183,14 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/@babel-runtime-npm-7.23.9-3b96e23cc2-10c0.zip/node_modules/@babel/runtime/",\
         "packageDependencies": [\
           ["@babel/runtime", "npm:7.23.9"],\
+          ["regenerator-runtime", "npm:0.14.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:7.24.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/@babel-runtime-npm-7.24.0-7eb1dd11a2-10c0.zip/node_modules/@babel/runtime/",\
+        "packageDependencies": [\
+          ["@babel/runtime", "npm:7.24.0"],\
           ["regenerator-runtime", "npm:0.14.1"]\
         ],\
         "linkType": "HARD"\
@@ -9383,6 +9392,16 @@ const RAW_RUNTIME_STATE =
           ["abab", "npm:2.0.6"],\
           ["whatwg-mimetype", "npm:2.3.0"],\
           ["whatwg-url", "npm:8.7.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["date-fns", [\
+      ["npm:2.30.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/date-fns-npm-2.30.0-895c790e0f-10c0.zip/node_modules/date-fns/",\
+        "packageDependencies": [\
+          ["date-fns", "npm:2.30.0"],\
+          ["@babel/runtime", "npm:7.24.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -17838,6 +17857,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:18.2.60"],\
           ["@types/react-dom", "npm:18.2.19"],\
           ["craco-alias", "npm:3.0.1"],\
+          ["date-fns", "npm:2.30.0"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-prettier", "virtual:8e181d7e2b5c31f85a4f18e8839e02d5ee0b5823c28e5a3f49c6f52335c530c6649b6b7a12862ed97e48291bcc1ed38f1ff0efb361b55aad4df70e0d1917f8bb#npm:9.1.0"],\
           ["eslint-config-react-app", "virtual:8e181d7e2b5c31f85a4f18e8839e02d5ee0b5823c28e5a3f49c6f52335c530c6649b6b7a12862ed97e48291bcc1ed38f1ff0efb361b55aad4df70e0d1917f8bb#npm:7.0.1"],\

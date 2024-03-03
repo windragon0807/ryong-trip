@@ -1,22 +1,78 @@
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { css } from '@emotion/react'
+import { differenceInMilliseconds, parseISO } from 'date-fns'
 
 import { Hotel as IHotel } from '@models/hotel'
 import ListRow from '@shared/ListRow'
 import Flex from '@shared/Flex'
 import Text from '@shared/Text'
 import Spacing from '@shared/Spacing'
+import Tag from '@shared/Tag'
 import addDelimiter from '@utils/addDelimiter'
+import formatTime from '@utils/formatTime'
 
 type Props = {
   hotel: IHotel
 }
 
 export default function Hotel({ hotel }: Props) {
+  const [remainedTime, setRemainedTime] = useState(0)
+
+  useEffect(() => {
+    if (hotel.events == null || hotel.events.promoEndTime == null) {
+      return
+    }
+
+    const promoEndTime = hotel.events.promoEndTime
+
+    const timer = setInterval(() => {
+      const 남은초 = differenceInMilliseconds(
+        parseISO(promoEndTime),
+        new Date(),
+      )
+
+      if (남은초 < 0) {
+        clearInterval(timer)
+        return
+      }
+
+      setRemainedTime(남은초)
+    }, 1_000)
+
+    return () => {
+      clearInterval(timer)
+    }
+  }, [hotel.events])
+
+  const tagComponent = () => {
+    if (hotel.events == null) {
+      return null
+    }
+
+    const { name, tagThemeStyle } = hotel.events
+
+    const promotionTxt =
+      remainedTime > 0 ? ` - ${formatTime(remainedTime)} 남음` : ''
+
+    return (
+      <div>
+        <Tag
+          color={tagThemeStyle.fontColor}
+          backgroundColor={tagThemeStyle.backgroundColor}>
+          {name.concat(promotionTxt)}
+        </Tag>
+        <Spacing size={8} />
+      </div>
+    )
+  }
+
   return (
-    <div>
+    <Link to={`/hotel/${hotel.id}`}>
       <ListRow
         contents={
           <Flex direction="column">
+            {tagComponent()}
             <ListRow.Texts
               title={hotel.name}
               subTitle={hotel.comment}></ListRow.Texts>
@@ -35,7 +91,7 @@ export default function Hotel({ hotel }: Props) {
         }
         style={containerStyles}
       />
-    </div>
+    </Link>
   )
 }
 
