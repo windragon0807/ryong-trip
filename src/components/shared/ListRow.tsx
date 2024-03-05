@@ -6,16 +6,6 @@ import Text from './Text'
 import Skeleton from './Skeleton'
 import Spacing from './Spacing'
 
-type Props = {
-  as?: 'div' | 'li'
-  left?: ReactNode
-  contents: ReactNode
-  right?: ReactNode
-  withArrow?: boolean
-  style?: SerializedStyles
-  onClick?: () => void
-}
-
 export default function ListRow({
   as = 'li',
   left,
@@ -24,7 +14,15 @@ export default function ListRow({
   withArrow,
   style,
   onClick,
-}: Props) {
+}: {
+  as?: 'div' | 'li'
+  left?: ReactNode
+  contents: ReactNode
+  right?: ReactNode
+  withArrow?: boolean
+  style?: SerializedStyles
+  onClick?: () => void
+}) {
   return (
     <Flex
       as={as}

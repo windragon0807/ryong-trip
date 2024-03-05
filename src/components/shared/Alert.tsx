@@ -6,21 +6,19 @@ import Dimmed from './Dimmed'
 import Flex from './Flex'
 import Button from './Button'
 
-type Props = {
-  open?: boolean
-  title: React.ReactNode
-  description?: React.ReactNode
-  buttonLabel?: string
-  onButtonClick: () => void
-}
-
 export default function Alert({
   open,
   title,
   description,
   buttonLabel = '확인',
   onButtonClick,
-}: Props) {
+}: {
+  open?: boolean
+  title: React.ReactNode
+  description?: React.ReactNode
+  buttonLabel?: string
+  onButtonClick: () => void
+}) {
   if (!open) return null
 
   return (

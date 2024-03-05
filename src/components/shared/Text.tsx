@@ -4,16 +4,14 @@ import styled from '@emotion/styled'
 import { colors, Colors } from '@styles/colorPalette'
 import { Typography, typographyMap } from '@styles/typography'
 
-type Props = {
+const Text = styled.span<{
   typography?: Typography
   color?: Colors
   display?: CSSProperties['display']
   textAlign?: CSSProperties['textAlign']
   fontWeight?: CSSProperties['fontWeight']
   bold?: boolean
-}
-
-const Text = styled.span<Props>(
+}>(
   ({ color = 'black', display, textAlign, fontWeight, bold }) => ({
     color: colors[color],
     display,

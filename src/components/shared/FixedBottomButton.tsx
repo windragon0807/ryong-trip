@@ -5,13 +5,15 @@ import styled from '@emotion/styled'
 import { colors } from '@styles/colorPalette'
 import Button from '@shared/Button'
 
-type Props = {
+export default function FixedBottomButton({
+  label,
+  onClick,
+  disabled,
+}: {
   label: string
   disabled?: boolean
   onClick: () => void
-}
-
-export default function FixedBottomButton({ label, onClick, disabled }: Props) {
+}) {
   const $portalRoot = document.getElementById('root-portal')
 
   if ($portalRoot == null) {

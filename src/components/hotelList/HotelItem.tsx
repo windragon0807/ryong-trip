@@ -12,11 +12,7 @@ import Tag from '@shared/Tag'
 import addDelimiter from '@utils/addDelimiter'
 import formatTime from '@utils/formatTime'
 
-type Props = {
-  hotel: Hotel
-}
-
-export default function HotelItem({ hotel }: Props) {
+export default function HotelItem({ hotel }: { hotel: Hotel }) {
   const [remainedTime, setRemainedTime] = useState(0)
 
   useEffect(() => {

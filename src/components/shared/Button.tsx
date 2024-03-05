@@ -12,15 +12,13 @@ import {
   buttonSizeMap,
 } from '@styles/button'
 
-type Props = {
+const BaseButton = styled.button<{
   color?: ButtonColor
   size?: ButtonSize
   weak?: boolean
   full?: boolean
   disabled?: boolean
-}
-
-const BaseButton = styled.button<Props>(
+}>(
   {
     cursor: 'pointer',
     fontWeight: 'bold',

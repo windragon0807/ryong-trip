@@ -1,12 +1,7 @@
 import styled from '@emotion/styled'
 import { colors, Colors } from '@styles/colorPalette'
 
-type Props = {
-  color?: string
-  backgroundColor?: string
-}
-
-const Tag = styled.span<Props>(
+const Tag = styled.span<{ color?: string; backgroundColor?: string }>(
   ({ color = colors.white, backgroundColor = colors.blue }) => ({
     fontSize: '11px',
     padding: '4px 5px',

@@ -3,11 +3,7 @@ import styled from '@emotion/styled'
 import Text from '@shared/Text'
 import { colors } from '@styles/colorPalette'
 
-type Props = {
-  label: string
-}
-
-export default function Badge({ label }: Props) {
+export default function Badge({ label }: { label: string }) {
   return (
     <Container>
       <Text bold typography="t7" color="white">

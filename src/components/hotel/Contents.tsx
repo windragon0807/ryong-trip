@@ -3,11 +3,7 @@ import styled from '@emotion/styled'
 
 import { typographyMap } from '@styles/typography'
 
-type Props = {
-  contents: string
-}
-
-export default function Contents({ contents }: Props) {
+export default function Contents({ contents }: { contents: string }) {
   return (
     <Container>
       <ReactMarkdown>{contents}</ReactMarkdown>

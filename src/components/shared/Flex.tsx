@@ -1,13 +1,11 @@
 import { CSSProperties } from 'react'
 import styled from '@emotion/styled'
 
-type Props = {
+const Flex = styled.div<{
   align?: CSSProperties['alignItems']
   justify?: CSSProperties['justifyContent']
   direction?: CSSProperties['flexDirection']
-}
-
-const Flex = styled.div<Props>(({ align, justify, direction }) => ({
+}>(({ align, justify, direction }) => ({
   display: 'flex',
   alignItems: align,
   justifyContent: justify,

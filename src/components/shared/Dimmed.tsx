@@ -1,10 +1,7 @@
+import { ReactNode } from 'react'
 import styled from '@emotion/styled'
 
-type Props = {
-  children: React.ReactNode
-}
-
-export default function Dimmed({ children }: Props) {
+export default function Dimmed({ children }: { children: ReactNode }) {
   return <Container>{children}</Container>
 }
 

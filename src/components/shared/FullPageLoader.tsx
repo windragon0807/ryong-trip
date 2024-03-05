@@ -2,11 +2,7 @@ import Flex from './Flex'
 import Text from './Text'
 import Spacing from './Spacing'
 
-type Props = {
-  message?: string
-}
-
-export default function FullPageLoader({ message }: Props) {
+export default function FullPageLoader({ message }: { message?: string }) {
   return (
     <Flex
       justify="center"

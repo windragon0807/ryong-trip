@@ -1,15 +1,11 @@
-import { MouseEvent } from 'react'
+import { MouseEvent, ReactNode } from 'react'
 import { css } from '@emotion/react'
 
 import Flex from './Flex'
 import Text from './Text'
 import { colors } from '@styles/colorPalette'
 
-type Props = {
-  children: React.ReactNode
-}
-
-export default function Agreement({ children }: Props) {
+export default function Agreement({ children }: { children: ReactNode }) {
   return (
     <Flex as="ul" direction="column" css={agreementContainerStyles}>
       {children}
@@ -22,7 +18,7 @@ function AgreementTitle({
   checked,
   onChange,
 }: {
-  children: React.ReactNode
+  children: ReactNode
   checked: boolean
   onChange: (e: MouseEvent<HTMLElement>, checked: boolean) => void
 }) {
@@ -43,7 +39,7 @@ function AgreementDescription({
   checked,
   onChange,
 }: {
-  children: React.ReactNode
+  children: ReactNode
   link?: string
   checked: boolean
   onChange: (e: MouseEvent<HTMLElement>, checked: boolean) => void

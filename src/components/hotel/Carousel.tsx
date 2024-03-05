@@ -3,11 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/css'
 
-type Props = {
-  images: string[]
-}
-
-export default function Carousel({ images }: Props) {
+export default function Carousel({ images }: { images: string[] }) {
   return (
     <div>
       <Swiper css={containerStyles} spaceBetween={8} loop>
