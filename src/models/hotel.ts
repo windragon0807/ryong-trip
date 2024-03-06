@@ -22,4 +22,5 @@ export type Hotel = {
       fontColor: string
     }
   }
+  recommendHotels: string[]
 }
