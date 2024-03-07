@@ -10,5 +10,6 @@ declare namespace NodeJS {
     REACT_APP_APP_ID: string
     REACT_APP_MESUREMENT_ID: string
     REACT_APP_GOOGLE_MAP_API: string
+    REACT_APP_KAKAO_API_KEY: string
   }
 }
