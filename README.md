@@ -1,4 +1,4 @@
-# MCard
+# Ryong Trip
 
 ## 설치
 
@@ -13,7 +13,7 @@ git clone https://github.com/windragon0807/ryong-trip.git
 2. 프로젝트 폴더로 이동합니다.
 
 ```sh
-cd mcard
+cd ryong-trip
 ```
 
 3. 프로젝트 종속성을 설치합니다.
