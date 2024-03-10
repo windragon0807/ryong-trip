@@ -5,19 +5,29 @@ import { useCallback } from 'react'
 import Flex from '@shared/Flex'
 import Button from '@shared/Button'
 import { colors } from '@styles/colorPalette'
+import useUser from '@hooks/auth/useUser'
 
 export default function Navbar() {
   const location = useLocation()
   const showSignButton =
     ['/signup', '/signin'].includes(location.pathname) === false
 
-  const user = null
+  const user = useUser()
 
   const renderButton = useCallback(() => {
     if (user != null) {
       return (
         <Link to="/my">
-          <img src="" alt="" />
+          <img
+            src={
+              user.photoURL ??
+              'https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-128.png'
+            }
+            alt="유저의 이미지"
+            width={40}
+            height={40}
+            style={{ borderRadius: '100%' }}
+          />
         </Link>
       )
     }
@@ -35,7 +45,7 @@ export default function Navbar() {
 
   return (
     <Flex justify="space-between" align="center" css={navbarContainerStyles}>
-      <Link to="/">홈</Link>
+      <Link to="/">Ryong Trip</Link>
       {renderButton()}
     </Flex>
   )
