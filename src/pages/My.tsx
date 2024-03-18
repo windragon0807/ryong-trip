@@ -1,3 +1,6 @@
+import useGoogleSignin from '@/hooks/useGoogleSignin'
+
 export default function MyPage() {
-  return <div>MyPage</div>
+  const { signout } = useGoogleSignin()
+  return <div onClick={signout}>MyPage</div>
 }
