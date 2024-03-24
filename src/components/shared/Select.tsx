@@ -7,9 +7,8 @@ import { colors } from '@styles/colorPalette'
 
 const BaseSelect = styled.select`
   height: 52px;
-  background-color: ${colors.gray};
-  border: none;
-  border-radius: 16px;
+  border: 1px solid ${colors.gray};
+  border-radius: 6px;
   padding: 0 16px;
   cursor: pointer;
   &:required:invalid {
@@ -24,7 +23,7 @@ export interface Option {
 type Props = SelectHTMLAttributes<HTMLSelectElement> & {
   label?: string
   options: Option[]
-  placeholder: string
+  placeholder?: string
 }
 
 const Select = forwardRef<HTMLSelectElement, Props>(function Select(

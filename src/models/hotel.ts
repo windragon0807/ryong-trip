@@ -23,4 +23,23 @@ export type Hotel = {
     }
   }
   recommendHotels: string[]
+  forms: ReservationForm[]
 }
+
+type BaseForm = {
+  id: string
+  label: string
+  required: string
+  helpMessage?: string
+}
+
+type TextFieldForm = BaseForm & {
+  type: 'TEXT_FIELD'
+}
+
+type SelectFieldForm = BaseForm & {
+  type: 'SELECT'
+  options: Array<{ label: string; value: string }>
+}
+
+export type ReservationForm = TextFieldForm | SelectFieldForm
