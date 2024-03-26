@@ -19,4 +19,9 @@ module.exports = {
     ],
     plugins: ['@emotion/babel-plugin'],
   },
+  devServer: {
+    client: {
+      overlay: false,
+    },
+  },
 }
