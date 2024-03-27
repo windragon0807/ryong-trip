@@ -13,8 +13,9 @@ import addDelimiter from '@utils/addDelimiter'
 import useUser from '@hooks/auth/useUser'
 import { useAlertContext } from '@contexts/AlertContext'
 import useRooms from './hooks/useRooms'
+import withSusepnse from '@shared/hocs/withSuspense'
 
-export default function Rooms({ hotelId }: { hotelId: string }) {
+function Rooms({ hotelId }: { hotelId: string }) {
   const { data } = useRooms({ hotelId })
   const user = useUser()
   const { open } = useAlertContext()
@@ -116,3 +117,5 @@ const imageStyles = css`
   object-fit: cover;
   border-radius: 8px;
 `
+
+export default withSusepnse(Rooms, { fallback: <div>룸 불러오는중...</div> })

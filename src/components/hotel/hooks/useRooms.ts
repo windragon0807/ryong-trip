@@ -29,5 +29,7 @@ export default function useRooms({ hotelId }: { hotelId: string }) {
     }
   }, [hotelId, client])
 
-  return useQuery(getRoomsKey(hotelId), () => getRooms(hotelId))
+  return useQuery(getRoomsKey(hotelId), () => getRooms(hotelId), {
+    suspense: true,
+  })
 }

@@ -6,8 +6,9 @@ import Top from '@shared/Top'
 import HotelItem from '@components/hotelList/HotelItem'
 import Spacing from '@shared/Spacing'
 import useLike from '@hooks/like/useLike'
+import withSusepnse from '@shared/hocs/withSuspense'
 
-export default function HotelList() {
+function HotelList() {
   const { data: hotels, hasNextPage, loadMore } = useHotels()
   const { data: likes, mutate: like } = useLike()
 
@@ -43,3 +44,7 @@ export default function HotelList() {
     </div>
   )
 }
+
+export default withSusepnse(HotelList, {
+  fallback: <div>호텔리스트불러오는중 ....</div>,
+})
