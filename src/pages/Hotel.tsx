@@ -12,6 +12,7 @@ import Map from '@components/hotel/Map'
 import RecommendHotels from '@components/hotel/RecommendHotels'
 import Review from '@components/hotel/Review'
 import ScrollProgressBar from '@shared/ScrollProgressBar'
+import SEO from '@shared/SEO'
 
 export default function HotelPage() {
   const { id } = useParams() as { id: string }
@@ -26,6 +27,7 @@ export default function HotelPage() {
 
   return (
     <Container>
+      <SEO title={name} description={comment} image={images[0]} />
       <ScrollProgressBar style={scrollProgressBarStyles} />
       <Top title={name} subTitle={comment} />
       <Carousel images={images} />
